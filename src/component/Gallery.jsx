@@ -60,6 +60,7 @@ const Gallery = () => (
                 height: "200px",
                 objectFit: "cover",
                 display: "block",
+                {}
               }}
             />
           </div>
