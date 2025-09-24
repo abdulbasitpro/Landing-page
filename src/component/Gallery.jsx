@@ -13,29 +13,28 @@ const galleryImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const Gallery = () => {
   return (
-    <section id="gallery" style={{ padding: "40px 0" }}>
-      <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto" }}>
-        <h2 style={{ fontWeight: "bold", fontSize: "2rem" }}>GALLERY</h2>
+    <section id="gallery" className="gallery-section" style={{ padding: "3rem 1rem" }}>
+      <div className="container" style={{ textAlign: "center", maxWidth: "1200px", margin: "0 auto" }}>
+        <h2 style={{ fontWeight: "bold", fontSize: "2rem", marginBottom: "0.5rem" }}>GALLERY</h2>
         <div
           style={{
             width: "80px",
             height: "4px",
             background: "#4361ee",
-            margin: "10px auto 30px auto",
+            margin: "0 auto 2rem auto",
             borderRadius: "2px",
           }}
         ></div>
-        <p style={{ color: "#6c757d", marginBottom: "30px" }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-          dapibus leonec.
+        <p style={{ color: "#6c757d", marginBottom: "2rem", maxWidth: "600px", marginLeft: "auto", marginRight: "auto" }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.
         </p>
 
         {/* Gallery Grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "15px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+            gap: "1rem",
           }}
         >
           {galleryImages.map((img, idx) => (
@@ -47,6 +46,7 @@ const Gallery = () => {
                 overflow: "hidden",
                 borderRadius: "6px",
                 cursor: "pointer",
+                aspectRatio: "1/1"
               }}
             >
               <img
@@ -54,12 +54,10 @@ const Gallery = () => {
                 alt={`Gallery ${idx + 1}`}
                 style={{
                   width: "100%",
-                  height: "200px",
+                  height: "100%",
                   objectFit: "cover",
                   display: "block",
                   transition: "transform 0.5s ease",
-                  userSelect: "none",
-                  WebkitUserDrag: "none",
                 }}
               />
             </div>
@@ -82,6 +80,22 @@ const Gallery = () => {
         }
         .gallery-box:hover::after {
           opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+          .gallery-section {
+            padding: 2rem 1rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .gallery-section {
+            padding: 1.5rem 1rem !important;
+          }
+          
+          .gallery-box {
+            aspect-ratio: 4/3;
+          }
         }
       `}</style>
     </section>

@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header>
       <div className="container">
@@ -8,16 +18,20 @@ const Header = () => {
           <a href="#" className="logo">
             REACT LANDING PAGE
           </a>
-          <ul className="nav-links">
-            <li><a href="#features">FEATURES</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#services">SERVICES</a></li>
-            <li><a href="#gallery">GALLERY</a></li>
-            <li><a href="#testimonials">TESTIMONIALS</a></li>
-            <li><a href="#team">TEAM</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+          <ul className={`nav-links ${isMenuOpen ? 'nav-active' : ''}`}>
+            <li><a href="#features" onClick={closeMenu}>FEATURES</a></li>
+            <li><a href="#about" onClick={closeMenu}>ABOUT</a></li>
+            <li><a href="#services" onClick={closeMenu}>SERVICES</a></li>
+            <li><a href="#gallery" onClick={closeMenu}>GALLERY</a></li>
+            <li><a href="#testimonials" onClick={closeMenu}>TESTIMONIALS</a></li>
+            <li><a href="#team" onClick={closeMenu}>TEAM</a></li>
+            <li><a href="#contact" onClick={closeMenu}>CONTACT</a></li>
           </ul>
-          <div className="mobile-menu">☰</div>
+          <div className={`mobile-menu ${isMenuOpen ? 'menu-active' : ''}`} onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </nav>
       </div>
     </header>

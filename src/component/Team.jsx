@@ -28,46 +28,41 @@ const team = [
 ];
 
 const Team = () => (
-  <section className="team-section" style={{ padding: "80px 0", background: "#fff" }}>
-    <div className="container" style={{ textAlign: "center" }}>
-      <h2 style={{ fontWeight: "bold", fontSize: "2.2rem" }}>MEET THE TEAM</h2>
+  <section className="team-section">
+    <div className="container" style={{ textAlign: "center", maxWidth: "1200px", margin: "0 auto", padding: "0 1rem" }}>
+      <h2 style={{ fontWeight: "bold", fontSize: "2rem", marginBottom: "0.5rem" }}>MEET THE TEAM</h2>
       <div
         className="underline"
         style={{
-          width: "120px",
+          width: "80px",
           height: "4px",
           background: "#4361ee",
-          margin: "10px auto 0 auto",
+          margin: "0 auto 2rem auto",
           borderRadius: "2px",
         }}
       ></div>
-      <p style={{ color: "#6c757d", margin: "20px 0 40px 0" }}>
+      <p style={{ color: "#6c757d", margin: "0 auto 3rem auto", maxWidth: "600px" }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.
       </p>
       <div
         className="team-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "40px",
-          maxWidth: "1100px",
-          margin: "0 auto",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "2rem",
         }}
       >
         {team.map((member, idx) => (
           <div key={idx} className="team-member" style={{ textAlign: "center" }}>
             <div
               style={{
-                width: "240px",
-                height: "240px",
-                margin: "0 auto 20px auto",
+                width: "200px",
+                height: "200px",
+                margin: "0 auto 1.5rem auto",
                 overflow: "hidden",
                 borderRadius: "8px",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-                background: "#eee",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+                background: "#f8f9fa",
               }}
             >
               <img
@@ -81,12 +76,47 @@ const Team = () => (
                 }}
               />
             </div>
-            <h3 style={{ fontWeight: "bold", fontSize: "1.1rem", marginBottom: "6px" }}>{member.name}</h3>
-            <p style={{ color: "#6c757d", fontSize: "1rem" }}>{member.role}</p>
+            <h3 style={{ fontWeight: "600", fontSize: "1.1rem", marginBottom: "0.5rem" }}>{member.name}</h3>
+            <p style={{ color: "#6c757d", fontSize: "0.9rem" }}>{member.role}</p>
           </div>
         ))}
       </div>
     </div>
+
+    <style>{`
+      @media (max-width: 768px) {
+        .team-section {
+          padding: 2rem 0 !important;
+        }
+        
+        .team-grid {
+          gap: 1.5rem !important;
+        }
+        
+        .team-member div {
+          width: 160px !important;
+          height: 160px !important;
+          margin-bottom: 1rem !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .team-section {
+          padding: 1.5rem 0 !important;
+        }
+        
+        .team-grid {
+          grid-template-columns: 1fr !important;
+          max-width: 300px !important;
+          margin: 0 auto !important;
+        }
+        
+        .team-member div {
+          width: 180px !important;
+          height: 180px !important;
+        }
+      }
+    `}</style>
   </section>
 );
 
