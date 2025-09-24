@@ -7,7 +7,6 @@ import img5 from "./Images/05-large.jpg.jpeg";
 import img6 from "./Images/06-large.jpg.jpeg";
 import img7 from "./Images/07-large.jpg.jpeg";
 import img8 from "./Images/08-large.jpg.jpeg";
-import img9 from "./Images/09-large.jpg.jpeg";
 
 const galleryImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
