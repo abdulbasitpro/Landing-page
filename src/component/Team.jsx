@@ -2,7 +2,7 @@ import React from "react";
 import member1 from "./Images/Screenshot 2024-11-17 154953.png";
 import member2 from "./Images/1729475436781.jpeg";
 import member3 from "./Images/1752709795887.png";
-import member4 from "./Images/a42efe6f-3b9a-4c1e-8ffb-b1eb05e152f9.webp";
+import member4 from "./Images/IMG_3725.jpg";
 
 const team = [
   {
@@ -21,7 +21,7 @@ const team = [
     image: member3,
   },
   {
-    name: "Karen Doe",
+    name: "Abdul Basit",
     role: "Project Manager",
     image: member4,
   },
